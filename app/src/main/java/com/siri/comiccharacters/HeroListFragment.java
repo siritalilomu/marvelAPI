@@ -75,13 +75,14 @@ public class HeroListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(), mNameTextView + " clicked", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), mNameTextView + " clicked", Toast.LENGTH_SHORT).show();
 //            Store.get(getActivity()).addStudent(mStudent);
 
-//            Intent intent = new Intent(getActivity(), StudentDetailActivity.class);
-//            intent.putExtra("NAME", (String) mNameTextView.getText());
-//            intent.putExtra("URL", (String) mStudent.getUrl());
-//            startActivity(intent);
+            Intent intent = new Intent(getActivity(), DetailActivity.class);
+            intent.putExtra("NAME", (String) mNameTextView.getText());
+            intent.putExtra("REALNAME", (String) mRealNameTextView.getText());
+            intent.putExtra("URL", (String) mHero.getUrl());
+            startActivity(intent);
         }
     }
 
